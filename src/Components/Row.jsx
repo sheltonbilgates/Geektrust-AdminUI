@@ -208,7 +208,8 @@ const Row = () => {
                     {isEditing &&
                     editedData.id === row.id &&
                     editedData.field === "email" ? (
-                      <input
+                      <input 
+
                         type="text"
                         value={editedData.value}
                         onChange={(e) =>
@@ -262,12 +263,12 @@ const Row = () => {
                   </TableCell>
                   <TableCell align="left">
                     <span className="flex gap-5">
-                      <FaRegEdit className="size-5 cursor-pointer edit" />
-                      <MdDeleteOutline
+                      <button className="edit"><FaRegEdit className="size-5 cursor-pointer edit" /></button>
+                      <button className="delete"><MdDeleteOutline
                         className="text-red-600 size-5 cursor-pointer delete"
                         onClick={() => handleDelete(row.id)}
                         disabled={currentPage === 1}
-                      />
+                      /></button>
                     </span>
                   </TableCell>
                 </TableRow>
